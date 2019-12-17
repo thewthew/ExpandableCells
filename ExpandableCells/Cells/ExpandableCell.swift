@@ -12,4 +12,20 @@ class ExpandableCell: UITableViewCell, UITableViewCellRegistrable {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    @IBOutlet weak var picker: UIView!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
+    var isExpanded: Bool = false {
+        didSet {
+            if isExpanded {
+                picker.isHidden = false
+                heightConstraint.constant = 128
+            } else {
+                picker.isHidden = true
+                heightConstraint.constant = 207
+            }
+        }
+    }
 }

@@ -32,10 +32,15 @@ extension ViewController: UITableViewDelegate {
         case 0:
             return
         case 1:
-            selectedRow = indexPath
-            tableView.beginUpdates()
-            tableView.endUpdates()
-            isExpanded = !isExpanded
+            guard let cell = tableView.cellForRow(at: indexPath) as? ExpandableCell
+                else { return }
+
+                UIView.animate(withDuration: 0.3, animations: {
+                    tableView.beginUpdates()
+                    cell.isExpanded = !cell.isExpanded
+                    tableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.top, animated: true)
+                    tableView.endUpdates()
+                })
         default:
             return
         }
@@ -53,18 +58,7 @@ extension ViewController: UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0:
-            return UITableView.automaticDimension
-        case 1:
-            if indexPath.row == selectedRow.row {
-                return isExpanded ? 90 : 200
-            } else {
-                return 90
-            }
-        default:
-            return 200
-        }
+        return UITableView.automaticDimension
     }
             
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,6 +72,7 @@ extension ViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ExpandableCell.reusableID, for: indexPath) as? ExpandableCell else {
                 return UITableViewCell()
             }
+            cell.isExpanded = false
             return cell
 
         default:
