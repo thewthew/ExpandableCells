@@ -15,6 +15,11 @@
 		490F810723A96341009031C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 490F810523A96341009031C2 /* LaunchScreen.storyboard */; };
 		490F811223A96341009031C2 /* ExpandableCellsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F811123A96341009031C2 /* ExpandableCellsTests.swift */; };
 		490F811D23A96341009031C2 /* ExpandableCellsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F811C23A96341009031C2 /* ExpandableCellsUITests.swift */; };
+		490F812C23A96496009031C2 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F812B23A96496009031C2 /* UITableViewExtension.swift */; };
+		490F812E23A964B2009031C2 /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F812D23A964B2009031C2 /* ClassCell.swift */; };
+		490F813023A964E5009031C2 /* ClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490F812F23A964E5009031C2 /* ClassCell.xib */; };
+		490F813223A96544009031C2 /* ExpandableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F813123A96544009031C2 /* ExpandableCell.swift */; };
+		490F813423A96566009031C2 /* ExpandableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490F813323A96566009031C2 /* ExpandableCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		490F811823A96341009031C2 /* ExpandableCellsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpandableCellsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		490F811C23A96341009031C2 /* ExpandableCellsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCellsUITests.swift; sourceTree = "<group>"; };
 		490F811E23A96341009031C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		490F812B23A96496009031C2 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		490F812D23A964B2009031C2 /* ClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
+		490F812F23A964E5009031C2 /* ClassCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassCell.xib; sourceTree = "<group>"; };
+		490F813123A96544009031C2 /* ExpandableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCell.swift; sourceTree = "<group>"; };
+		490F813323A96566009031C2 /* ExpandableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandableCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,7 @@
 		490F80F923A9633F009031C2 /* ExpandableCells */ = {
 			isa = PBXGroup;
 			children = (
+				490F812A23A9644F009031C2 /* Cells */,
 				490F80FA23A9633F009031C2 /* AppDelegate.swift */,
 				490F80FC23A9633F009031C2 /* SceneDelegate.swift */,
 				490F80FE23A9633F009031C2 /* ViewController.swift */,
@@ -106,6 +117,7 @@
 				490F810323A96341009031C2 /* Assets.xcassets */,
 				490F810523A96341009031C2 /* LaunchScreen.storyboard */,
 				490F810823A96341009031C2 /* Info.plist */,
+				490F812B23A96496009031C2 /* UITableViewExtension.swift */,
 			);
 			path = ExpandableCells;
 			sourceTree = "<group>";
@@ -126,6 +138,17 @@
 				490F811E23A96341009031C2 /* Info.plist */,
 			);
 			path = ExpandableCellsUITests;
+			sourceTree = "<group>";
+		};
+		490F812A23A9644F009031C2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				490F812D23A964B2009031C2 /* ClassCell.swift */,
+				490F812F23A964E5009031C2 /* ClassCell.xib */,
+				490F813123A96544009031C2 /* ExpandableCell.swift */,
+				490F813323A96566009031C2 /* ExpandableCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,8 +255,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490F813023A964E5009031C2 /* ClassCell.xib in Resources */,
 				490F810723A96341009031C2 /* LaunchScreen.storyboard in Resources */,
 				490F810423A96341009031C2 /* Assets.xcassets in Resources */,
+				490F813423A96566009031C2 /* ExpandableCell.xib in Resources */,
 				490F810223A9633F009031C2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +287,9 @@
 				490F80FF23A9633F009031C2 /* ViewController.swift in Sources */,
 				490F80FB23A9633F009031C2 /* AppDelegate.swift in Sources */,
 				490F80FD23A9633F009031C2 /* SceneDelegate.swift in Sources */,
+				490F812C23A96496009031C2 /* UITableViewExtension.swift in Sources */,
+				490F812E23A964B2009031C2 /* ClassCell.swift in Sources */,
+				490F813223A96544009031C2 /* ExpandableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
