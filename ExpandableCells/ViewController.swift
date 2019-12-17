@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     var selectedRow: IndexPath = IndexPath(row: -1, section: 0)
+    var isExpanded = false
 
     @IBOutlet weak var myTableView: UITableView!
     override func viewDidLoad() {
@@ -34,7 +35,7 @@ extension ViewController: UITableViewDelegate {
             selectedRow = indexPath
             tableView.beginUpdates()
             tableView.endUpdates()
-
+            isExpanded = !isExpanded
         default:
             return
         }
@@ -57,9 +58,10 @@ extension ViewController: UITableViewDataSource {
             return UITableView.automaticDimension
         case 1:
             if indexPath.row == selectedRow.row {
-                return 200
+                return isExpanded ? 90 : 200
+            } else {
+                return 90
             }
-            return 50
         default:
             return 200
         }
